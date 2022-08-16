@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- The load static is necessary to load images, css and JS -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" crossorigin="anonymous"/>
+    <title>Pokedex | Django</title>
+</head>
+<body>
+    <h2>Using Django Framework</h5> 
+    <!-- Inserting the main image -->
+    <img src="{% static 'img/pokedex-image.png' %}" class="image" style="width:100px;">
+    
+    <form method="post">
+        <!-- Cross-site request forgery Protection-->
+        {% csrf_token %}
+        
+        <!-- Searchbar -->
+        <input type="text" name="pokemon" placeholder="Search Your Pokemon...">
+        <button type="submit">Search</button>
+    </form>
+    <div>
+        <!-- Rendering everything requested to the API -->
+        <!-- First we validate the data requested -->
+        {% if number and name %}
+            <h3><span>Number:</span> {{number}}</h3>
+            <h3><span>Name:</span> {{name}}</h3>
+            <h3><span>Height: {{height}}</span></h3>
+            <h3><span>Weight: {{weight}}</span></h3>
+            <h3><span>Default sprite: </span><img src="{{sprite}}" alt="{{name}} sprite" style="width:70px"></h3>
+        {% else %}
+            <h3><span class="error-found">No Pokemon found :(</span></h3>
+        {% endif %}
+    </div>
+</body>
+</html>
