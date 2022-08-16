@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4x8um3r6_l6unu_**f07r_of#hrzliv-ogem1(c6-%7fuvcnk+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Se pone en false para poder customizar el error 404
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Se necesita poner el localhost para que funcione el 404
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost'] 
 
 
 # Application definition
@@ -119,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Including the images folder
-MEDIA_URL = '/images/'
+MEDIA_URL = '/img/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )

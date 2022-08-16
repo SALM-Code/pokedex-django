@@ -27,13 +27,28 @@
         <!-- Rendering everything requested to the API -->
         <!-- First we validate the data requested -->
         {% if number and name %}
-            <h3><span>Number:</span> {{number}}</h3>
-            <h3><span>Name:</span> {{name}}</h3>
-            <h3><span>Height: {{height}}</span></h3>
-            <h3><span>Weight: {{weight}}</span></h3>
-            <h3><span>Default sprite: </span><img src="{{sprite}}" alt="{{name}} sprite" style="width:70px"></h3>
+            <h3>
+                <span>Number:</span> {{number}}
+            </h3>
+            <h3>
+                <span>Name:</span> {{name}}
+            </h3>
+            <h3>
+                <span>Height: {{height}}</span>
+            </h3>
+            <h3>
+                <span>Weight: {{weight}}</span>
+            </h3>
+            <h3>
+                <span>Default sprite: </span>
+                <img src="{{sprite}}" alt="{{name}} sprite" style="width:70px">
+            </h3>
         {% else %}
-            <h3><span class="error-found">No Pokemon found :(</span></h3>
+        <div>
+            <h3>
+                <span>Escribe el nombre o ID de tu pokemon.</span>
+            </h3>
+        </div>
         {% endif %}
     </div>
 </body>
