@@ -7,6 +7,9 @@ Creada para el tutorial de Pokedex en Django en mi canal de Youtube.
 ## Uso
 Solo tienes que instalar el código, correr el server y probar la Pokedex.
 Escribe el nombre o el número del pokemon en el buscador y te mostrará su información.
-![Pokedex Usage](/pokedex-django-usage.PNG)
 
-Proyecto sin finalizar, aún necesito elevar el error 404 y mejorar el CSS...
+## 404
+Si no encuentra el pokemon, te mostrará una página de error con el mensaje:
+"Pokemon no encontrado, trata de regresar a home."
+
+Sientete libre de descargar el código y modificarlo a tu antojo. Si tienes alguna duda o sugerencia, no dudes en dejar un comentario en el video. 😉
