@@ -8,18 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" crossorigin="anonymous"/>
+    <link rel="icon" href="{% static 'img/pokeball-icon.ico' %}">
     <title>Pokedex | Django</title>
 </head>
 <body>
     <h2>Using Django Framework</h5> 
     <!-- Inserting the main image -->
     <img src="{% static 'img/pokedex-image.png' %}" class="image" style="width:100px;">
+    
     <div>
-        <h3>
-            <span class="error-found">No Pokemon found :c. 
-                <a href="{% url 'index' %}">Go back to index.</a>
-            </span>
-        </h3>
+        <h3>Pokemon no encontrado, trata de regresar a <a href="{% url 'index' %}">home.</a></h3>
     </div>
 </body>
 </html>

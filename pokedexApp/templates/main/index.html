@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" crossorigin="anonymous"/>
+    <link rel="icon" href="{% static 'img/pokeball-icon.ico' %}">
     <title>Pokedex | Django</title>
 </head>
 <body>
@@ -28,25 +29,25 @@
         <!-- First we validate the data requested -->
         {% if number and name %}
             <h3>
-                <span>Number:</span> {{number}}
+                Number: {{number}}
             </h3>
             <h3>
-                <span>Name:</span> {{name}}
+                Name: {{name}}
             </h3>
             <h3>
-                <span>Height: {{height}}</span>
+                Height: {{height}}
             </h3>
             <h3>
-                <span>Weight: {{weight}}</span>
+                Weight: {{weight}}
             </h3>
             <h3>
-                <span>Default sprite: </span>
-                <img src="{{sprite}}" alt="{{name}} sprite" style="width:70px">
+                Default sprite: 
             </h3>
+            <img src="{{sprite}}" alt="{{name}} sprite" style="width:70px">
         {% else %}
         <div>
             <h3>
-                <span>Escribe el nombre o ID de tu pokemon.</span>
+                Escribe el nombre o ID de tu pokemon.
             </h3>
         </div>
         {% endif %}

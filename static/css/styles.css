@@ -11,10 +11,3 @@ body{
     margin: 0 auto;
     text-align: center;
 }
-.error-found{
-    margin: 0 auto;
-    text-align: center;
-    font-size: 2rem;
-    background-color: #ff8686;
-    border-radius: 5px;
-}

@@ -1,14 +1,15 @@
-from urllib import response
 from django.shortcuts import render
-from django.http import HttpResponse
 import urllib.request
 import json
+from http import HTTPStatus
+from urllib.error import HTTPError
 
 # Create your views here.
 def index(request):
+
     try:
         if request.method == 'POST':
-            pokemon = request.POST['pokemon']
+            pokemon = request.POST['pokemon'].lower()
             pokemon = pokemon.replace(' ', '%20')
             url_pokeapi = urllib.request.Request(f'https://pokeapi.co/api/v2/pokemon/{pokemon}')
             url_pokeapi.add_header('User-Agent', "pikachu")
@@ -17,7 +18,7 @@ def index(request):
             # Convirtiendo el JSON a un diccionario
             # 'list_of_data' guardará todos los datos que estamos solicitando
             list_of_data = json.loads(source)
-            
+                
             # La variable 'data' guardará todo lo que vamos a renderizar en HTML
             # Las llaves y valores las provee la API de Pokemon
 
@@ -42,11 +43,6 @@ def index(request):
             data = {}
 
         return render(request, "main/index.html", data)
-    except HttpResponse.status_code == 404:
-        return render(request, 'main/404.html')
-
-
-def handler404(request, template_name='main/404.html'):
-    response = render(template_name)
-    response.status_code = 404
-    return response
+    except HTTPError as e:
+        if e.code == 404:
+            return render(request, "main/404.html")
