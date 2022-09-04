@@ -2,7 +2,7 @@
 
 Esta es una Pokedex que cree consumiendo la API de [Pokeapi](https://pokeapi.co/).
 Creada para el tutorial de Pokedex en Django en mi canal de Youtube.
-**Mira el video haciendo click [aquí.](https://youtube.com)** 👈
+**Mira el video haciendo click [aquí.](https://youtu.be/rxKMVipyNXU)** 👈
 
 ## Uso
 Solo tienes que instalar el código, correr el server y probar la Pokedex.
